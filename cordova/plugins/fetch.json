@@ -6,5 +6,22 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.lisaseacat.metawear": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ldeluca/cordova-plugin-metawear.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-ble-central": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-ble-central"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }

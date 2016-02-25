@@ -1,3 +1,29 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="container">
+	<h2 class="header">Welcome to Ember</h2>
+	<div class="row">
+		<div class="s12">
+			<h4>Device Connection</h4>
+			{{#unless metawearConnected}}
+				<button class="btn waves-effect waves-light green" {{action 'metawear_connect'}}>
+					Connect to Metawear
+				</button>
+			{{else}}
+				<button class="btn waves-effect waves-light red" {{action 'metawear_disconnect'}}>
+					Disconnect
+				</button>
+			{{/unless}}
+		</div>
+	</div>
+	{{#if metawearConnected}}
+	<div class="row">
+		<div class="col s12">
+			<h4>Metawear LED Controls</h4>
+			<button type="button" class="btn waves-effect waves-light red btn-small" {{action 'metawear_turnOnLED_red'}}>Red </button>
+			<button type="button" class="btn waves-effect waves-light blue btn-small" {{action 'metawear_turnOnLED_blue'}}>Blue </button>
+			<button type="button" class="btn waves-effect waves-light green btn-small" {{action 'metawear_turnOnLED_green'}}>Green </button><br>
+			<button type="button" class="btn waves-effect waves-light black btn-small" {{action 'metawear_turnOffLED'}}>Turn off LEDs </button>
+		</div>
+	</div>
+	{{/if}}
+	{{outlet}}
+</div>
